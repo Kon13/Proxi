@@ -20,5 +20,24 @@
 }
 
 .container-maps {
-  padding: 15%;
+  padding: 10%;
+  color: red;
+  border: 2px solid black;
+  outline: #4CAF50 solid 10px;
+  margin: auto;  
+  padding: 20px;
+  text-align: center;
+}
+
+.main-container{
+  padding-top: 5%;
+}
+
+.offset-general{
+  padding-top: 100px;
+}
+
+.maps-canvas{
+  height: 50%;
+  width: 80%;
 }
