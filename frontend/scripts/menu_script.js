@@ -9,7 +9,7 @@ function getLocation() {
   }
 }
 
-function _coords_read(){
+function _coords_read(position){
     lat_long = {
       "lat":position.coords.latitude,
       "long":position.coords.longitude
@@ -24,7 +24,7 @@ function display_usr_loc(location, zoom_num, map_container){
   });
 }
 // TEST
-let current_location = getLocation();
-let map_div = document.getElementById("maps");
-displayLocation(current_location, 8, map_div);
+var current_location = getLocation();
+var map_div = document.getElementById("maps");
+display_usr_loc(current_location, 8, map_div);
 // TEST
