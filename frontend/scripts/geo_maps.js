@@ -1,6 +1,7 @@
 let load_map;
 let map;
-
+let marker;
+let circle;
 exampleMaps = {
   "timestamp": 1421093714138,
   "coords":
@@ -29,11 +30,13 @@ function initMap() {
 
 function getLocation() {
   try{
-    navigator.geolocation.watchPosition(function(position){
-      console.log(position);
+    navigator.geolocation.getCurrentPosition(function(position){
+      console.log(position.coords);
       var map_div = document.getElementById("map");
-      display_usr_loc(position.coords, 8, map_div, "You");
-      //return position;
+      display_map_loc(position.coords, 15, map_div);
+      var user_main_marker = create_marker(map_div, position.coords, "You", null);
+      add_radius_marker(user_main_marker, 1000, '#AA0000');
+      return position;
     });
   }
   catch{
@@ -46,32 +49,29 @@ function getLocation() {
   
 }
 
-function display_usr_loc(location, zoom_num, map_container, pic, title_marker){
+function display_map_loc(location, zoom_num, map_container, pic, title_marker){
   map = new google.maps.Map(map_container, {
-    center: { lat: 1, lng: 2},
-    //center: { lat: parseFloat(location.lat), lng: parseFloat(location.lng)},
+    center: { lat: parseFloat(location.latitude), lng: parseFloat(location.longitude)},
     zoom: zoom_num,
-    icon: pic,
-    title: title_marker
   });
 }   
 
 function add_radius_marker(map, radius, color, point){
-  var circle = new google.maps.Circle({
+  circle = new google.maps.Circle({
     map: map,
-    radius: 16093,    // 10 miles in metres
-    fillColor: '#AA0000'
+    radius: radius,
+    fillColor: color
   });
-circle.bindTo('center', marker, 'position');
+circle.bindTo('center', point, 'position');
 }
 
-function create_marker(select_map, pos, title_marker, pic){
-  var marker = new google.maps.Marker({
-    map: select_map,
-    zoom: zoom_num,
+function create_marker(map, pos, title_marker, pic){
+  marker = new google.maps.Marker({
     position: new google.maps.LatLng(pos.lat, pos.lng),
-    title: title_marker
+    title: title_marker,
+    icon:pic
   });
+  marker.setMap(map);
   return marker;
 }
 

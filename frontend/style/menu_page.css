@@ -27,6 +27,8 @@
   margin: auto;  
   padding: 20px;
   text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .main-container{
@@ -37,7 +39,14 @@
   padding-top: 100px;
 }
 
-.maps-canvas{
-  height: 50%;
-  width: 80%;
+#map {
+  height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
