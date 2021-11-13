@@ -1,26 +1,29 @@
-
 <!doctype html>
 <html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Proxi - Find. Talk. Connect.">
-    <meta name="author" content="Nicolas Ryjoukhine, Konstantin Radov, Pechka">
-    <title>Proxi v0.1</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="icon" href="./media/web_icon.ico" sizes="32x32" type="image/png">
-    <link rel="stylesheet" href="./style/menu_page.css">
-    <meta name="theme-color" content="#7952b3">   
 
-    <script src="./scripts/menu_script.js"></script>
-  </head>
-<body class="d-flex flex-column h-100">  
-  <header>
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Fixed navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Proxi - Find. Talk. Connect.">
+	<meta name="author" content="Nicolas Ryjoukhine, Konstantin Radov, Pechka">
+	<title>Proxi v0.1</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	 crossorigin="anonymous">
+	<link rel="icon" href="./media/web_icon.ico" sizes="32x32" type="image/png">
+	<link rel="stylesheet" href="./style/menu_page.css">
+	<meta name="theme-color" content="#7952b3">
+
+	<script src="./scripts/geo_maps.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+</head>
+
+<body class="d-flex flex-column h-100">
+	<header>
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Fixed navbar</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -55,10 +58,10 @@
   </header>
   <div class="container container-maps offset-general">
     <div>DEL ME. OUTLINE REPRESENTS MAPS AREA</div>
+    <div id="map"></div>
     <div class="container" id="maps_sub">
       <button onclick="getLocation()">Try It</button>
     </div>
-    <iframe src="https://maps.google.com/maps?q=Tangesir%20Dates%20Products&amp;t= &amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" style="maps-canvas" allowfullscreen></iframe>
   </div>
   <div class="container main-container">
     THIS IS THE PART. ADD GRID SYSTEM THIS IS THE PART. ADD GRID SYSTEM THIS IS THE PART. ADD GRID SYSTEM THIS IS THE PART. ADD GRID SYSTEM
@@ -81,6 +84,10 @@
     THIS IS THE PART. ADD GRID SYSTEM THIS IS THE PART. ADD GRID SYSTEM THIS IS THE PART. ADD GRID SYSTEM THIS IS THE PART. ADD GRID SYSTEM
     THIS IS THE PART. ADD GRID SYSTEM THIS IS THE PART. ADD GRID SYSTEM THIS IS THE PART. ADD GRID SYSTEM THIS IS THE PART. ADD GRID SYSTEM
   </div>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoqbGDbzB-Ggw2WHqSJntPwuMy2VITgb0&callback=initMap&v=weekly"
+      async
+    ></script>
   <footer class="footer mt-auto py-3 bg-light">
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2021 Copyright:
@@ -89,4 +96,3 @@
   </footer>
   </body>
 </html>
-

@@ -1,0 +1,8 @@
+run="login_page.html"
+language="html"
+onBoot="echo Booting up!"
+
+[packager]
+afterInstall="date >> package_install_log"
+ignoredPaths=[".git"]
+ignoredPackages=["twitter", "discord"]
